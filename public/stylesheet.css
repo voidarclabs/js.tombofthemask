@@ -1,0 +1,16 @@
+#mask {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    top: 200px;
+    left: 0;
+}
+#background {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+}
