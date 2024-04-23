@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>level editor</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        // Function to fill the grid with buttons and attach click event
+        function fillGrid() {
+          var grid = $('.grid');
+          grid.empty(); // Clear existing content
+          var screenWidth = $(window).width();
+          var screenHeight = $(window).height();
+          var numCols = Math.floor(screenWidth / 50);
+          var numRows = Math.floor(screenHeight / 50);
+          
+          for (var i = 0; i < numRows; i++) {
+            for (var j = 0; j < numCols; j++) {
+              var cell = $('<div class="grid-cell"></div>');
+              var button = $('<button></button>').attr('onclick', 'changepiece(' + j + ', ' + i + ')').text('1').appendTo(cell);
+              var button2 = $('<button></button>').attr('onclick', 'changepiece(' + j + ', ' + i + ')').text('2').appendTo(cell);
+              grid.append(cell);
+            }
+          }
+        }
+    
+        // Initial fill
+        fillGrid();
+    
+        // Resize on window resize
+        $(window).on('resize', function() {
+          fillGrid();
+        });
+      });
+    </script>
+
+</head>
+<body>
+    <div class="grid">
+        <div></div>
+    </div>
+</body>
+</html>

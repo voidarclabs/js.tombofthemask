@@ -10,6 +10,8 @@ const PORT = 3000;
 
 // Set up middleware to serve static files from the 'public' folder
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/maker', express.static(path.resolve(__dirname, 'public', 'leveleditor')));
+
 
 // Start the server
 app.listen(PORT, () => {
